@@ -1,0 +1,24 @@
+Loaded = true
+local function RandomString(length)
+    local randomString = ""
+    for i = 1, length do
+        local randomNumber = math.random(97, 122)
+        randomString = randomString .. string.char(randomNumber)
+    end
+    return tostring(randomString)
+end
+
+local oldstring = ""
+spawn(function()
+    while wait(.1) do
+        local String = RandomString(10)
+        if String == oldstring then
+            while true do end
+        end 
+        if PandaAuth:GetLink(ServiceName) == nil or PandaAuth:ValidateKey(ServiceName, RandomString(10)) then
+            while true do end
+        end
+        oldstring = RandomString(10)
+        task.wait(2)
+    end
+end)
