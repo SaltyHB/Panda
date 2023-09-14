@@ -1,3 +1,4 @@
+print("Panda Loaded")
 Loaded = true
 local function RandomString(length)
     local randomString = ""
