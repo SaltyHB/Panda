@@ -9,6 +9,7 @@ local function RandomString(length)
     return tostring(randomString)
 end
 
+local ServiceName = service_name or ServiceName
 local oldstring = ""
 spawn(function()
     while wait(.1) do
